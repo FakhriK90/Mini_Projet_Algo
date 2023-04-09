@@ -1,0 +1,46 @@
+Exercice 1 : 0
+
+Exercice 2 :
+a) 5
+b) 2
+c) 2
+d) 1
+
+Exercice 3 :
+
+Procédure CréationEl(Tête: Liste)
+Début
+        Allouer(Tête)
+        Ecrire("Entrer un entier")
+        Lire(Tête^.Ele)
+        Tête^.Suivant <- Nil
+Fin
+
+Procédure Création(N: entier, L: Liste)
+Variables:  Tête, P: Liste
+            i : entier
+Début
+        CréationEl(Tête)
+        L <- Tête
+        Pour i de 2 à N faire
+        CréationEl(P)
+        L^.Suivant <- P
+        L <- P
+        Fin Pour
+        L <- Tête
+Fin
+
+Exercice 4 :
+
+Procédure CompteEl(L: Liste)
+Variables 
+nbE, i: entier
+Tête, P: Liste
+Début
+        nbE <- 0
+        L <- Tête
+        i <- P
+        Si (L <> NILL) Alors
+        nbE <- nbE + 1
+        i <- i+1
+Fin

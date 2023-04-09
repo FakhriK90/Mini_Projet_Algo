@@ -1,0 +1,66 @@
+Algorithme Etudiants
+    Début
+        Structure Etudiant
+            nom: Chaine de caractères
+            Num_Id: Entier
+            programme: Chaine de caractères
+            suivant: P_E
+        Fin Structure
+        Nouveau_Etudiant: P_E
+        Nouveau_Etudiant <- Nouvelle allocation de mémoire pour Etudiant
+        Nouveau_Etudiant.nom <- "Fakhri Kahouach"
+        Nouveau_Etudiant.Num_Id <- 123456
+        Nouveau_Etudiant.programme <- "Informatique"
+        Nouveau_Etudiant.suivant <- NILL
+        
+
+        
+    Fin
+
+Algorithme Affichage_Liste_Etudiants
+    Début
+        Courant: P_E
+        Courant <- Premier_Etudiant
+        Tant que Courant ≠ NILL
+            Afficher "Nom: ", Courant.nom
+            Afficher "ID: ", Courant.Num_Id
+            Afficher "Programme: ", Courant.programme
+            Courant <- Courant.suivant
+        Fin Tant que
+    Fin
+
+Algorithme Recherche_Etudiant_Par_ID(Num_Id: Entier) : P_E
+    Début
+        Courant: P_E
+        Courant <- Premier_Etudiant
+        Tant que Courant ≠ NILL ET Courant.Num_Id ≠ Num_Id
+            Courant <- Courant.suivant
+        Fin Tant que
+        Si Courant ≠ NILL Alors
+            Retourner Courant
+        Sinon
+            Retourner NILL
+        Fin Si
+    Fin
+
+Iheb
+Iheb Errabie
+Algorithme Suppression_Etudiant(Num_Id: Entier)
+    Début
+        Courant: P_E
+        Precedent: P_E
+        Courant <- Premier_Etudiant
+        Precedent <- NILL
+        Tant que Courant ≠ NILL ET Courant.Num_Id ≠ Num_Id
+            Precedent <- Courant
+            Courant <- Courant.suivant
+        Fin Tant que
+        Si Courant ≠ NILL Alors
+            Si Precedent = NILL Alors
+                Premier_Etudiant <- Courant.suivant
+            Sinon
+                Precedent.suivant <- Courant.suivant
+            Fin Si
+            Libérer(Courant)
+        Fin Si
+    Fin
