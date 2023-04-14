@@ -43,8 +43,6 @@ Algorithme Recherche_Etudiant_Par_ID(Num_Id: Entier) : P_E
         Fin Si
     Fin
 
-Iheb
-Iheb Errabie
 Algorithme Suppression_Etudiant(Num_Id: Entier)
     Début
         Courant: P_E
